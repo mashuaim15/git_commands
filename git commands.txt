@@ -1,0 +1,116 @@
+Git command notes: 
+
+git --version
+
+// add user names and info
+
+git config --global user.name "Brian Ma"
+git config --global user.email "mashuaim15@gmail.com"
+
+// show user info
+
+git config --list
+
+// initialize a repo from existing code, local machine
+
+git init
+
+//list all the files
+
+ls -la
+
+//remove files
+
+rm -rf 
+
+//before commit
+
+git status 
+
+// ingore certain files
+
+touch .gitignore
+
+(edit the gitignore file with text editor) （example wildcard: *.pyc, *.html)
+
+// add everything to the staging area or: 
+git add .xxxxxxxx
+git add -A (all)
+
+// return untracked or all
+
+git reset .xxxxxx
+git reset (all)
+
+// commit changes with "messages"
+
+git commit -m "initial commit"
+
+// check git log
+
+git log
+
+---------------------track remote repository with git ---------------------
+
+// cloning a remote repo 
+
+1.git clone <url>
+
+eg: git clone https://github.com/xxxxxx/xxxxx.git
+
+2. git clone ../remote_repo.git
+
+viewing information about the remote repo
+
+git remote -v    (check info about it)
+git branch -a    (check branch about it)
+
+---general steps to commit a change---!!!
+
+git diff (show the changes of the codes)
+git status
+git add -A
+git commit -m "xxxxxxxx"
+
+---pull and push (remote repo)
+
+git pull origin master
+
+git push origin master
+
+---common workflow
+
+git branch <name of branch>   (create branch)
+git branch (show branch)
+
+git checkout (start working on a branch)
+git checkout <name of branch>
+
+---After commit push branch to remote
+
+git push -u origin <name of branch>     (push local branch to remote)
+git branch -a (show which are changed)
+
+---Then can be shorten to
+git push 
+git pull
+
+
+---Merge branch with master branch
+
+git checkout master           (check local master branch)
+git pull origin master        (pull all the changes to git)
+git branch --merged           (check branch merged so far)
+git merge <name of branch>    (merge to the local master branch)
+git push origin master        (push to remote master branch)
+
+---Deleting a Branch
+
+git branch --merged           (check branch merged so far)
+git branch -d <name of branch>    (delete a branch locally)
+git branch -a                     (show which are merged)
+git push origin --delete <name of branch)     (delete remote branch) 
+
+
+
+
